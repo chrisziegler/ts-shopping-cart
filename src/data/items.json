@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Headphone 1",
+    "price": 10.99,
+    "imgUrl": "/imgs/headphone1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Laptop 1",
+    "price": 1199,
+    "imgUrl": "/imgs/laptop1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Headphone 3",
+    "price": 1.05,
+    "imgUrl": "/imgs/headphone3.png"
+  },
+  {
+    "id": 4,
+    "name": "Laptop 3",
+    "price": 14000,
+    "imgUrl": "/imgs/laptop3.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Speakers 1",
+    "price": 14000,
+    "imgUrl": "/imgs/speakers1.png"
+  },
+  {
+    "id": 6,
+    "name": "Speakers 2",
+    "price": 14000,
+    "imgUrl": "/imgs/speakers2.jpg"
+  }
+]
