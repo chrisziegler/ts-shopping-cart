@@ -11,10 +11,14 @@ type CartItem = {
 }
 
 type ShoppingCartContext = {
+  openCart: () => void
+  closeCart: () => void
   getItemQuantity: (id: number) => number
   increaseCartQuantity: (id: number) => void
   decreaseCartQuantity: (id: number) => void
   removeFromCart: (id: number) => void
+  cartQuantity: number
+  cartItems: CartItem[]
 }
 
 const ShoppingCartContext = createContext({} as ShoppingCartContext)
@@ -28,7 +32,16 @@ export function useShoppingCart() {
 export function ShoppingCartProvider({
   children,
 }: ShoppingCartProviderProps) {
+  const [isOpen, setIsOpen] = useState(false)
   const [cartItems, setCartItems] = useState<CartItem[]>([])
+
+  const openCart = () => setIsOpen(true)
+  const closeCart = () => setIsOpen(false)
+
+  const cartQuantity = cartItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0,
+  )
 
   // optional chaining syntax, instead of ternary - if that expression evaluates to anything return
   // the quantity property, otherwise return 0
@@ -81,6 +94,10 @@ export function ShoppingCartProvider({
         increaseCartQuantity,
         decreaseCartQuantity,
         removeFromCart,
+        cartItems,
+        cartQuantity,
+        openCart,
+        closeCart,
       }}>
       {children}
     </ShoppingCartContext.Provider>
